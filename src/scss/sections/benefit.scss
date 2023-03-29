@@ -1,0 +1,70 @@
+.benefit {
+  padding: 50px 0 80px;
+  @media (max-width: $mobile) {
+    padding: 40px 0 55px;
+  }
+
+  &__container {
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include adaptiveValue("gap", 82, 10, 0, 1290, 768);
+    align-items: center;
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 30px;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    position: relative;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      text-align: center;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        transform: translate(25%, -50%);
+        top: 50%;
+        @include adaptiveValue("right", -41, -5, 0, 1290, 768);
+        width: 20px;
+        height: 20px;
+        border: 5px solid #F7F9FD;
+        border-radius: 50%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
+      }
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      @media (max-width: $mobileSmall) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    p {
+      max-width: 190px
+    }
+  }
+}
+

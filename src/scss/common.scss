@@ -1,0 +1,111 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.breadcrumbs {
+  padding: 20px 0;
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      font-weight: 300;
+      line-height: math.div(26, 16);
+      color: $grey;
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      display: inline-flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          position: relative;
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background: url('@img/svg/arrow.svg') center/contain no-repeat;
+        }
+      }
+
+      a {
+        @media (hover: hover) {
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+
+      span {
+
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  .swiper-pagination-bullet {
+    border: 3px solid #0B1A48;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+
+    transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+
+    &.swiper-pagination-bullet-active {
+      background: $orange;
+      border: 3px solid $orange;
+    }
+  }
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #F7F9FD;
+    -webkit-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    -moz-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    -ms-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    -o-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    width: 50px;
+    height: 50px;
+    @media (hover: hover) {
+      &:hover {
+        background: #fff;
+
+        svg {
+          fill: $mainColor;
+        }
+      }
+    }
+
+
+    svg {
+      -webkit-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      -moz-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      -ms-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      -o-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      fill: $blue;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: math.div(42, 32);
+}

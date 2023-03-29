@@ -1,0 +1,211 @@
+.faq {
+  padding: 80px 0 50px;
+  @media (max-width: $mobile) {
+    padding: 60px 0;
+  }
+
+  &__container {
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__top {
+
+  }
+
+  &__head {
+    text-align: center;
+    font-weight: 500;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__title {
+
+    font-size: 38px;
+    line-height: math.div(48, 38);
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+      @media (max-width: $mobile) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    a {
+      -webkit-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      -moz-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      -ms-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      -o-transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      @media (hover: hover) {
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiveValue("gap", 182, 30, 0, 1290, 768);
+    align-items: center;
+    margin-top: 80px;
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      align-items: flex-start;
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      margin-bottom: 60px;
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    position: relative;
+    @media (max-width: $mobileSmall) {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        transform: translate(25%, -50%);
+        top: 50%;
+        @include adaptiveValue("right", -91, -15, 0, 1290, 768);
+        width: 20px;
+        height: 20px;
+        border: 5px solid #F7F9FD;
+        border-radius: 50%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
+      }
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      @media (max-width: $mobileSmall) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+  }
+
+}
+
+.faq-spollers {
+
+  max-width: 850px;
+  margin: 0 auto;
+
+  &__item {
+    border: 1px solid #D8DADE;
+    backdrop-filter: blur(12px);
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+
+    &._spoller-active {
+      padding: 20px;
+      border: 1px solid $blue;
+      border-radius: 16px;
+      @media (max-width: $mobile) {
+        border-radius: 50px;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    cursor: pointer;
+
+    svg {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    path {
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    }
+
+    &._spoller-active .faq-spollers__none {
+      opacity: 0;
+    }
+
+    &._spoller-active {
+      path {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  &__title-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0
+    }
+  }
+
+  &__none {
+
+  }
+
+  &__body {
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: math.div(26, 16);
+    padding-top: 20px;
+  }
+}

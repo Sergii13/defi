@@ -1,0 +1,235 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media (max-width: $tablet) {
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    align-items: stretch;
+  }
+  @media (max-width: $mobileSmall) {
+    flex-direction: column;
+  }
+  // .options__item
+  &__item {
+    position: relative;
+    cursor: pointer;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+      @media (max-width: $tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // .options__input
+  &__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+
+    &:checked + .options__label {
+      border: 1px solid #0957DE;
+    }
+
+    &:checked + .options__label:before {
+      background: $blue url('@img/svg/chk.svg') center /10px 8px no-repeat;
+      border: 1.5px solid $blue;
+    }
+
+  }
+
+  // .options__label
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    border: 1px solid #D8DADE;
+    box-shadow: 0px 0px 15px rgba(11, 26, 72, 0.05);
+    border-radius: 65px;
+    background: #fff;
+    padding: 13px;
+    @media (max-width: $tablet) {
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      padding: 40px 7px;
+      border-radius: 65px;
+    }
+    @media (max-width: $mobileSmall) {
+      padding: 20px 7px;
+    }
+
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      border: 1.5px solid #D8DADE;
+      border-radius: 50%;
+    }
+  }
+
+  // .options__text
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: inline-flex;
+    gap: 10px;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    span {
+      @media (max-width: $tablet) {
+        min-height: 48px;
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+      }
+    }
+
+    .grey {
+      color: $grey;
+    }
+
+    .blue {
+      color: $blue;
+    }
+
+    .red {
+      color: $red;
+    }
+
+  }
+}
+
+.options-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: $mobileSmall) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    overflow: hidden;
+
+    &:first-child {
+      .options-2__text-bottom {
+        border-left: 1px solid $grey;
+      }
+    }
+  }
+
+  &__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+
+    &:checked + .options-2__label .options-2__text-head {
+      background: transparent;
+      color: $mainColor;
+
+      &::after {
+
+        opacity: 1;
+      }
+    }
+
+    &:checked + .options-2__label .options-2__text-bottom {
+      background: $mainColor;
+      color: #fff;
+    }
+
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text-head {
+    padding: 20px 17px;
+    font-weight: 500;
+    font-size: 22px;
+    flex: 1 1 auto;
+    line-height: 30px;
+    color: #fff;
+    position: relative;
+    @media (max-width: $tablet) {
+      font-size: 18px;
+      line-height: math.div(28, 18);
+    }
+
+    &::after {
+      opacity: 0;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      height: 6px;
+
+    }
+
+    &.red {
+      background: $red;
+
+      &::after {
+        background: $red;
+      }
+    }
+
+    &.orange {
+
+      &::after {
+        background: $orange;
+      }
+
+      background: $orange;
+    }
+
+    &.green {
+
+      &::after {
+        background: #4AC34A;
+      }
+
+      background: #4AC34A;
+    }
+  }
+
+  &__text-bottom {
+    padding: 30px 5px;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid $grey;
+    border-right: 1px solid $grey;
+    @media (max-width: $tablet) {
+      font-size: 24px;
+    }
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+

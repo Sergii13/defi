@@ -1,0 +1,115 @@
+.order {
+  background: #F7F9FD;
+  border-radius: 60px 60px 0px 0px;
+  padding: 50px 0;
+  @media (max-width: $tablet) {
+    padding: 0;
+    background: #fff;
+  }
+
+  &__container {
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__image-ibg {
+    width: 48%;
+    flex-shrink: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    padding-bottom: percent(630, 1290);
+    @media (max-width: $tablet) {
+      width: calc(100% + 70px);
+      margin-left: -35px;
+      margin-bottom: 40px;
+      border-radius: 0px 0px 60px 60px;
+      padding-bottom: 100%;
+    }
+    @media (max-width: $mobileSmall) {
+      width: calc(100% + 30px);
+      margin-left: -15px;
+    }
+  }
+
+  &__content {
+    max-width: 520px;
+    @media (max-width: $tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__form {
+    max-width: 410px;
+    @media (max-width: $tablet) {
+      max-width: 100%;
+    }
+
+    .product__button {
+      max-width: 100%
+    }
+
+    .product__date {
+      justify-content: center;
+      padding-left: 0;
+    }
+
+    .product__time-icon {
+      background: transparent;
+    }
+
+    .options {
+      &:not(:last-child) {
+        margin-bottom: rem(30);
+        @media (max-width: $mobile) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+
+.form-order {
+  &__items {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+      @media (max-width: $mobile) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__label {
+    line-height: 22px;
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+}
+
+
