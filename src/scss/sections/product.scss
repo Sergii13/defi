@@ -476,6 +476,9 @@
       @media (max-width: $mobileSmall) {
         font-size: 12px;
       }
+      @media (max-width: em(400)) {
+        font-size: 11px;
+      }
     }
   }
 }
