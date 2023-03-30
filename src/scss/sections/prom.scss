@@ -89,8 +89,14 @@
     min-height: 60px;
     display: flex;
     align-items: center;
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
     @media (max-width: em(670)) {
       min-height: auto;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 28px;
     }
 
     a {
@@ -113,16 +119,21 @@
     font-weight: 500;
     @media (max-width: em(670)) {
       justify-content: flex-start;
-
+    }
+    @media (max-width: $mobileSmall) {
+      flex-wrap: wrap;
     }
   }
 
   &__price-new {
     font-size: 22px;
     line-height: 30px;
-    flex: 1 1 auto;
     @media (max-width: em(670)) {
       font-size: 32px;
+
+    }
+    @media (max-width: em(400)) {
+      font-size: 28px;
 
     }
   }
@@ -137,6 +148,10 @@
     font-size: 18px;
     line-height: 28px;
     color: $red;
+    @media (max-width: em(400)) {
+      font-size: 16px;
+
+    }
   }
 
   &__proc {

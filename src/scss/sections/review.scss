@@ -195,6 +195,9 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
+    @media (max-width: em(400)) {
+      font-size: 18px;
+    }
 
     &.verified {
       background: url('@img/svg/verify.svg') center right /24px 24px no-repeat;
@@ -204,7 +207,10 @@
 
   &__text {
     font-weight: 300;
-    line-height: 26px;
+    line-height: math.div(26, 16);
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(20);

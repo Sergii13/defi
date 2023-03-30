@@ -6,6 +6,9 @@
   font-size: 16px;
   line-height: 1;
   transition: opacity 0.3s ease 0s;
+  @media (max-width: $mobileSmall) {
+    font-size: 14px;
+  }
 
   &_card {
     font-size: 18px;

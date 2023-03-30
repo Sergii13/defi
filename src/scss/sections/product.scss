@@ -179,10 +179,20 @@
     align-items: center;
     gap: 10px;
     font-weight: 500;
+    white-space: nowrap;
     @media (max-width: $tablet) {
       justify-content: center;
-      flex-wrap: wrap;
       gap: 15px 30px;
+    }
+    @media (max-width: em(370)) {
+      gap: 15px;
+
+    }
+
+    .non-mob {
+      @media (max-width: $mobile) {
+        display: none;
+      }
     }
 
     &:not(:last-child) {
@@ -203,6 +213,9 @@
       font-size: 60px;
       line-height: 50px;
     }
+    @media (max-width: $mobileSmall) {
+      font-size: 48px;
+    }
   }
 
   &__price-old {
@@ -212,6 +225,9 @@
     text-decoration-line: line-through;
     @media (max-width: $tablet) {
       font-size: 42px;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 36px;
     }
 
   }
@@ -243,6 +259,9 @@
     @media (max-width: $tablet) {
       justify-content: center;
     }
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(30);
@@ -257,6 +276,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: $mobileSmall) {
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+    }
   }
 
   &__button {
@@ -288,10 +312,6 @@
 }
 
 
-.swiper {
-}
-
-
 .review-product {
   background: #F7F9FD;
   border-radius: 16px 0px 16px 16px;
@@ -312,14 +332,17 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    @media (max-width: $mobileSmall) {
+      margin-bottom: -3px;
+    }
   }
 
   &__head {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     font-weight: 500;
+    flex-wrap: wrap;
 
     &:not(:last-child) {
       margin-bottom: rem(10);
@@ -329,6 +352,9 @@
   &__title {
     margin-right: 5px;
     line-height: math.div(26, 16);
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
 
     &.verified {
       &::after {
@@ -338,7 +364,12 @@
         position: relative;
         top: 6px;
         display: inline-block;
-        background: url('@img/svg/verify.svg');
+        background: url('@img/svg/verify.svg') center /contain no-repeat;
+        @media (max-width: $mobileSmall) {
+          width: 20px;
+          height: 20px;
+          top: 5px;
+        }
       }
     }
   }
@@ -346,6 +377,9 @@
   &__value {
     font-size: 13px;
     line-height: 20px;
+    @media (max-width: $mobileSmall) {
+      font-size: 12px;
+    }
   }
 
   &__bottom {
@@ -391,6 +425,11 @@
     justify-content: center;
     background: #fff;
     flex-shrink: 0;
+    @media (max-width: $mobileSmall) {
+      width: 55px;
+      height: 55px;
+      padding: 12px;
+    }
   }
 
   &__text {
@@ -421,6 +460,9 @@
       line-height: math.div(28, 18);
       @media (max-width: $mobile) {
         font-size: 14px;
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: 12px;
       }
     }
   }
