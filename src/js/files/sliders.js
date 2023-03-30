@@ -102,6 +102,76 @@ function initSliders() {
             on: {}
         });
     }
+    if (document.querySelector('.main-block__slider')) { // Вказуємо склас потрібного слайдера
+        // Створюємо слайдер
+        new Swiper('.main-block__slider', { // Вказуємо склас потрібного слайдера
+            // Підключаємо модулі слайдера
+            // для конкретного випадку
+            modules: [Pagination],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 800,
+            //touchRatio: 0,
+            //simulateTouch: false,
+            loop: true,
+            //preloadImages: false,
+            //lazy: true,
+
+            /*
+            // Ефекти
+            effect: 'fade',
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            */
+
+            // Пагінація
+            pagination: {
+                el: '.main-block__pagination',
+                clickable: true,
+            },
+
+
+            // Скроллбар
+            /*
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+            */
+
+            // Кнопки "вліво/вправо"
+
+
+            /*
+            // Брейкпоінти
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    autoHeight: true,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1268: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+            */
+            // Події
+            on: {}
+        });
+    }
     if (document.querySelector('.product__slider')) { // Вказуємо склас потрібного слайдера
         // Створюємо слайдер
         new Swiper('.product__slider', { // Вказуємо склас потрібного слайдера
@@ -178,13 +248,87 @@ function initSliders() {
     }
 }
 
+const breakpoint = window.matchMedia('(max-width:768px)');
+// keep track of swiper instances to destroy later
+let mySwipers = [];
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+const breakpointChecker = function () {
+    // if larger viewport and multi-row layout needed
+    if (breakpoint.matches === true) {
+        // clean up old instances and inline styles when available
+        if (mySwipers !== undefined) {
+            mySwipers.forEach(item => {
+                item.destroy(true, true)
+            })
+        }
+        // or/and do nothing
+        return;
+        // else if a small viewport and single column layout needed
+    } else if (breakpoint.matches === false) {
+        // fire small viewport version of swiper
+        return enableSwiper();
+    }
+};
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+const enableSwiper = function () {
+    const allSliders = document.querySelectorAll('.prod__slider')
+    if (allSliders.length > 0) {
+        allSliders.forEach((item, index) => {
+            mySwipers[index] = new Swiper(item, {
+                modules: [Navigation, Pagination],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 30,
+                speed: 800,
+                loop: true,
+                // Кнопки "вліво/вправо"
+                navigation: {
+                    prevEl: item.closest('.prod').querySelector('.arrows__button_prev'),
+                    nextEl: item.closest('.prod').querySelector('.arrows__button_next'),
+                },
+
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1280: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    },
+                },
+
+                // Події
+                on: {}
+            });
+        })
+    }
+
+};
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+// keep an eye on viewport size changes
+breakpoint.addListener(breakpointChecker);
+// kickstart
+breakpointChecker();
+
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
     let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
     if (sliderScrollItems.length > 0) {
         for (let index = 0; index < sliderScrollItems.length; index++) {
             const sliderScrollItem = sliderScrollItems[index];
-            const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
+            const sliderScrollBar =
+                sliderScrollItem.querySelector('.swiper-scrollbar');
             const sliderScroll = new Swiper(sliderScrollItem, {
                 observer: true,
                 observeParents: true,
@@ -196,7 +340,7 @@ function initSlidersScroll() {
                 scrollbar: {
                     el: sliderScrollBar,
                     draggable: true,
-                    snapOnRelease: false
+                    snapOnRelease: false,
                 },
                 mousewheel: {
                     releaseOnEdges: true,

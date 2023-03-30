@@ -1,0 +1,429 @@
+.prod {
+  padding: 40px 0;
+
+  &__container {
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(50);
+      @media (max-width: $tablet) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__button-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: math.div(48, 38);
+    @media (max-width: em(1100)) {
+      font-size: 30px;
+
+    }
+    @media (max-width: $tablet) {
+      font-size: 24px;
+    }
+    @media (max-width: $mobile) {
+      text-align: center;
+      font-size: 38px;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 28px;
+
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      @media (max-width: $tablet) {
+        width: 40px;
+        height: 40px;
+      }
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__arrows {
+    display: inline-flex;
+    width: auto;
+    gap: 15px;
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .swiper-wrapper {
+    @media (max-width: $mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    @media (max-width: em(600)) {
+      grid-template-columns: repeat(1, 1fr);
+
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+    @media (max-width: $mobile) {
+      &:nth-child(n+5) {
+        display: none;
+      }
+    }
+  }
+
+  &__slider {
+    &.swiper {
+      padding: 20px;
+      margin: -20px;
+    }
+  }
+}
+
+
+.prod-card {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(11, 26, 72, 0.15);
+  border-radius: 8px;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+  display: flex;
+  flex-direction: column;
+
+  &.in-cart {
+    .prod-card__button {
+      border: 2px solid #0957DE;
+      @media (max-width: $mobile) {
+        border: none;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        right: 11px;
+        z-index: 2;
+        width: 20px;
+        height: 20px;
+        background: url('@img/svg/checked.svg') center /contain no-repeat;
+        @media (max-width: $mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .prod-card__button {
+        background: $blue;
+        width: 163px;
+
+        span {
+          opacity: 1;
+          width: auto;
+          margin-right: 10px;
+        }
+
+        svg {
+          fill: #fff;
+        }
+      }
+
+      .prod-card__labels {
+        span {
+          &.sale-label {
+            color: #fff;
+            background: $red;
+          }
+
+          &.top-label {
+            color: #fff;
+            background: $orange;
+          }
+
+          &.new-label {
+            color: #fff;
+            background: #44AD74;
+          }
+        }
+      }
+
+      box-shadow: 0px 0px 30px rgba(11, 26, 72, 0.2);
+    }
+  }
+
+  &__labels {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    padding: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      &.sale-label {
+        border: 2px solid #DB2A1F;
+        color: #DB2A1F;
+
+      }
+
+      &.top-label {
+        border: 2px solid $orange;
+        color: $orange;
+      }
+
+      &.new-label {
+        border: 2px solid #44AD74;
+        color: #44AD74;
+      }
+    }
+  }
+
+  &__image-ibg {
+    height: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: em(600)) {
+      height: 320px;
+
+    }
+    @media (max-width: em(430)) {
+      height: 270px;
+
+    }
+
+    img {
+      position: relative;
+      height: auto;
+      width: auto;
+      max-height: 100%;
+    }
+  }
+
+  &__content {
+    padding: 14px 20px 20px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+  &__price {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    @media (max-width: em(600)) {
+      justify-content: flex-start;
+      gap: 15px;
+
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__new-price {
+    font-size: 22px;
+    line-height: math.div(30, 22);
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
+    @media (max-width: em(600)) {
+      font-size: 32px;
+
+    }
+    @media (max-width: em(430)) {
+      font-size: 26px;
+
+    }
+  }
+
+  &__right-price {
+  }
+
+  &__old {
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    text-align: right;
+    text-decoration: line-through;
+    color: #DB2A1F;
+    @media (max-width: $mobile) {
+      font-size: 14px;
+    }
+    @media (max-width: em(600)) {
+      font-size: 18px;
+
+    }
+    @media (max-width: em(430)) {
+      font-size: 14px;
+
+    }
+  }
+
+  &__proc {
+    width: 49px;
+    height: 31px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    line-height: 16px;
+    background: url('@img/svg/skidka.svg') center /100% 100% no-repeat;
+    margin-left: 10px;
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: math.div(18, 14);
+    color: $grey;
+
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    flex: 1 1 auto;
+    transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    @media (max-width: em(600)) {
+      align-items: flex-start;
+    }
+    @media (max-width: em(430)) {
+      font-size: 16px;
+      min-height: 32px;
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__row {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  &__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    line-height: math.div(22, 16);
+  }
+
+  &__button {
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 30px;
+    background: #F7F9FD;
+    backdrop-filter: blur(1px);
+    transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+    padding: 13px;
+    @media (hover: hover) {
+      &:hover {
+        background: $mainColor;
+
+      }
+    }
+    @media (max-width: $mobile) {
+      background: $blue;
+      width: 163px;
+    }
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0px 0px 30px rgba(11, 26, 72, 0.2);
+      }
+    }
+
+    span {
+      opacity: 0;
+      color: #fff;
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 18px;
+      margin-right: 0;
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      @media (max-width: $mobile) {
+        opacity: 1;
+        width: auto;
+        margin-right: 10px;
+      }
+    }
+
+    svg {
+      width: 30px;
+      flex-shrink: 0;
+      height: 30px;
+      fill: $blue;
+      margin-right: 2px;
+      transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      @media (max-width: $mobile) {
+        fill: #fff;
+      }
+    }
+  }
+}

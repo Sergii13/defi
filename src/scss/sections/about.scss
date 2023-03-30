@@ -20,11 +20,9 @@
       grid-template-columns: repeat(1, 1fr);
     }
     @media (max-width: $mobile) {
-      background: none;
+      padding: 40px 0px;
     }
-    @media (max-width: $mobileSmall) {
-      padding: 40px 15px;
-    }
+
   }
 
   &__content {
@@ -33,8 +31,11 @@
 
   &__label {
     font-size: 18px;
-    line-height: 28px;
+    line-height: math.div(28, 18);
     color: $blue;
+    @media (max-width: $mobileSmall) {
+      font-size: 16px;
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(15);
@@ -54,6 +55,9 @@
     font-weight: 300;
     font-size: 16px;
     line-height: math.div(26, 16);
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(20);
@@ -68,6 +72,9 @@
     gap: 10px;
     line-height: math.div(26, 16);
     padding: 11px 20px;
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
 
     img {
       width: 24px;
@@ -83,8 +90,11 @@
   &__info-text {
     font-weight: 500;
     font-size: 18px;
-    line-height: 28px;
+    line-height: math.div(28, 18);
     color: $blue;
+    @media (max-width: $mobileSmall) {
+      font-size: 16px;
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(20);

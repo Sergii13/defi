@@ -1,0 +1,138 @@
+.main-block {
+  padding-top: 30px;
+  @media (max-width: $mobile) {
+    padding-top: 0;
+  }
+
+  &__container {
+  }
+
+  &__slider {
+    @media (max-width: $mobile) {
+      margin-left: -35px !important;
+      width: calc(100% + 70px);
+    }
+  }
+
+  &__image-ibg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .pc {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    .mob {
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+
+    img {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    @media (max-width: $mobile) {
+      max-width: 100%;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__head {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: math.div(40, 30);
+    @media (max-width: $mobile) {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: math.div(40, 20);
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+      @media (max-width: $mobile) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .swiper-slide {
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+    padding: 50px 50px 110px 50px;
+    @media (max-width: $mobile) {
+      border-radius: 0;
+      height: 500px;
+      padding: 25px 35px 60px;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__top {
+    @media (max-width: $mobile) {
+      flex: 1 1 auto;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: math.div(80, 80);
+    color: $blue;
+    text-transform: uppercase;
+    @media (max-width: $mobile) {
+      font-size: 44px;
+      line-height: math.div(66, 44);
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 34px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__button {
+    @media (max-width: $mobile) {
+      align-self: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    left: 50px;
+    @media (max-width: $mobile) {
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

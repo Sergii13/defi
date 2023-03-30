@@ -415,6 +415,14 @@
     gap: 20px;
   }
 
+  &_2 {
+    .bottom-product__text {
+      p {
+        max-width: 571px
+      }
+    }
+  }
+
   &__icon {
     background: #FFFFFF;
     height: 67px;
@@ -442,6 +450,7 @@
     }
 
     h4 {
+      max-width: 536px;
       font-size: 32px;
       line-height: math.div(42, 32);
       @media (max-width: $tablet) {
@@ -450,6 +459,9 @@
       }
       @media (max-width: $mobile) {
         font-size: 16px;
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: 14px;
       }
     }
 
