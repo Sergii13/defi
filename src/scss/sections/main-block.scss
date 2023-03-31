@@ -89,6 +89,10 @@
   }
 
   &__top {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+
     @media (max-width: $mobile) {
       flex: 1 1 auto;
       margin-bottom: 20px;
@@ -109,9 +113,7 @@
       font-size: 34px;
     }
 
-    &:not(:last-child) {
-      margin-bottom: rem(20);
-    }
+
   }
 
   &__button {

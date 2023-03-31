@@ -125,6 +125,7 @@
 
   &.in-cart {
     .prod-card__button {
+      position: relative;
       border: 2px solid #0957DE;
       @media (max-width: $mobile) {
         border: none;
