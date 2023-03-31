@@ -1,0 +1,364 @@
+.order2 {
+  background: #F7F9FD;
+  border-radius: 60px 60px 0px 0px;
+  padding-top: 50px;
+  @media (max-width: $tablet) {
+    padding-top: 0;
+  }
+
+  &__container {
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__left {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding-top: 39px;
+    @media (max-width: $tablet) {
+      max-width: 100%;
+      margin-bottom: 40px;
+      padding-top: 0;
+    }
+  }
+
+  &__image-ibg {
+    border-radius: 16px;
+    overflow: hidden;
+    padding-bottom: percent(489, 529);
+    @media (max-width: $tablet) {
+      border-radius: 0px 0px 60px 60px;
+    }
+    @media (max-width: $mobile) {
+      width: calc(100% + 70px);
+      margin-left: -35px !important;
+      padding-bottom: 100%;
+    }
+    @media (max-width: $mobileSmall) {
+      width: calc(100% + 30px);
+      margin-left: -15px !important;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+      @media (max-width: $tablet) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .product__price {
+    justify-content: center;
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 38px;
+    line-height: math.div(48, 38);
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 28px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+      @media (max-width: $mobile) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    line-height: math.div(22, 16);
+    color: $grey;
+    @media (max-width: $mobileSmall) {
+      font-size: 12px;
+    }
+    @media (max-width: em(400)) {
+      font-size: 10px;
+
+    }
+
+    img {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      @media (max-width: $mobileSmall) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  &__form {
+  }
+}
+
+.form-order2 {
+  max-width: 630px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 16px 16px 0px 0px;
+  padding: 40px 50px 12px;
+  @media (max-width: $tablet) {
+    max-width: 100%;
+  }
+  @media (max-width: $mobile) {
+    padding: 20px 30px;
+  }
+  @media (max-width: $mobileSmall) {
+    padding: 20px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 38px;
+    line-height: math.div(48, 38);
+    text-align: center;
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 28px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__items {
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__item {
+  }
+
+  &__label {
+    display: inline-block;
+    line-height: math.div(22, 16);
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__input-wrap {
+    position: relative;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    left: 23px;
+    top: 18px;
+    position: absolute;
+  }
+
+  &__input {
+    background: #F7F9FD;
+    border: 1px solid #D8DADE;
+    border-radius: 35px;
+    height: 60px;
+    padding: 0 10px 0 62px;
+  }
+
+
+  &__option-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: math.div(28, 18);
+    color: $blue;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin-top: 20px;
+    @media (max-width: $mobile) {
+      margin-top: 10px;
+    }
+  }
+
+  &__bottom-items {
+    margin-top: 20px;
+    @media (max-width: $mobile) {
+      margin-top: 10px;
+    }
+  }
+}
+
+
+.form-order2-item {
+  &:not(:last-child) {
+    margin-bottom: rem(20);
+  }
+
+  &:nth-child(2) {
+    @media (max-width: $mobile) {
+      .form-order2-item__content h4 {
+        background: url('@img/svg/ff02.svg') left center /24px 24px no-repeat;
+      }
+    }
+  }
+
+  background: #FFFFFF;
+  padding: 18px 20px;
+  border: 1px solid #D8DADE;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: $mobile) {
+    padding: 20px;
+  }
+  @media (max-width: $mobileSmall) {
+    padding: 20px 15px;
+  }
+
+  &.added {
+    background: #F7F9FD;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    @media (max-width: $mobile) {
+      display: none;
+
+    }
+  }
+
+  &__content {
+    @media (max-width: $mobile) {
+      flex: 1 1 auto;
+    }
+
+    h4 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: math.div(28, 18);
+      @media (max-width: $mobile) {
+        padding-left: 29px;
+        background: url('@img/svg/ff01.svg') left center /24px 24px no-repeat;
+        font-size: 16px;
+        font-weight: 400;
+        span {
+          display: none;
+        }
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: 14px;
+      }
+      @media (max-width: em(390)) {
+        font-size: 12px;
+
+      }
+
+
+      &:not(:last-child) {
+        margin-bottom: rem(5);
+        @media (max-width: $mobile) {
+          margin-bottom: 10px;
+        }
+
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: math.div(26, 16);
+      color: $blue;
+      @media (max-width: $mobile) {
+        font-size: 13px;
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: 11px;
+      }
+      @media (max-width: em(390)) {
+        font-size: 10px;
+
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    @media (max-width: $mobile) {
+      height: 42px;
+      padding: 0 5px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+  }
+
+  &__right {
+    width: 126px;
+    flex-shrink: 0;
+    text-align: center;
+    @media (max-width: $mobile) {
+      width: 78px;
+    }
+
+    p {
+      line-height: math.div(22, 16);
+
+      &:not(:last-child) {
+        margin-bottom: rem(10);
+      }
+
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__label {
+    background: #32C06B;
+    border-radius: 100px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: 22px;
+    color: #FFFFFF;
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      font-weight: 400;
+      height: 42px;
+    }
+  }
+}
