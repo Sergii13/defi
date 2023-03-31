@@ -46,8 +46,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 210px;
     position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 100%;
+   
 
     img {
       position: absolute;

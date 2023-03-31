@@ -297,10 +297,17 @@
   &__pay {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
     padding-left: 23px;
+    @media (max-width: em(400)) {
+      gap: 5px
+    }
+
+    img {
+      flex-shrink: 1;
+    }
+
     @media (max-width: $tablet) {
       padding-left: 0;
       justify-content: center;

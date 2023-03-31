@@ -215,7 +215,7 @@ export function spollers() {
             initSpollers(spollersRegular);
         }
         // Отримання слойлерів з медіа-запитами
-        let mdQueriesArray = dataMediaQueries(spollersArray, "spollers");
+        let mdQueriesArray = dataMediaQueries(spollersArray, "cat-spollers");
         if (mdQueriesArray && mdQueriesArray.length) {
             mdQueriesArray.forEach(mdQueriesItem => {
                 // Подія
