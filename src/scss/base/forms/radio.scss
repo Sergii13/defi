@@ -128,9 +128,9 @@
   }
 
   &__text-head {
-    padding: 20px 17px;
+    padding: 15px 17px;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 18px;
     flex: 1 1 auto;
     line-height: 30px;
     display: flex;
@@ -193,9 +193,9 @@
   }
 
   &__text-bottom {
-    padding: 20px 5px;
+    padding: 15px 5px;
     font-weight: 500;
-    font-size: 38px;
+    font-size: 28px;
     line-height: math.div(48, 38);
     white-space: nowrap;
     overflow: hidden;
